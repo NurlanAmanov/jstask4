@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="a" placeholder="Neqeder fibo eded olsun?">
+    <button onclick="hesab()">=</button>
+    <div id="ntc"></div>
+
+    <script>
+        const a = document.getElementById("a");
+        const ntc = document.getElementById('ntc');
+
+        function hesab() {
+            let x = +a.value;
+            let f1 = 0;
+            let f2 = 1;
+            let kod = '';
+            for (let a = 1; a < x; a++) {
+                let y = f1 + f2;
+                f1 = f2
+                f2 = y
+                kod += ',' + y
+            }
+            ntc.innerHTML=kod
+        }
+    </script>
+
+</body>
+
+</html>
